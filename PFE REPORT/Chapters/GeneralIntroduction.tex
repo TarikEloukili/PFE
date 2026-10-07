@@ -1,0 +1,79 @@
+\chapter*{General Introduction}
+\addcontentsline{toc}{chapter}{General Introduction}
+\markboth{General Introduction}{General Introduction}
+\label{chap:general-introduction}
+
+The transition toward a low-carbon economy has become a global priority. While
+renewable electricity generation has expanded rapidly, several sectors, heavy
+industry, aviation, maritime transport, and high-temperature industrial
+processes, cannot be decarbonized through direct electrification alone. For
+these hard-to-abate sectors, the \textbf{Power-to-X} (PtX) paradigm has emerged
+as a promising pathway: renewable electricity is converted into storable
+carriers and molecules, such as green hydrogen and its derivatives (ammonia,
+methanol, and sustainable aviation fuel), that can be transported and used where
+electrons cannot.
+
+Power-to-X projects are capital-intensive and structurally complex. Their
+viability depends on the interplay of renewable generation, electrolysis,
+storage, market prices, off-take agreements, and financing assumptions over a
+project's lifetime. At the \emph{pre-feasibility} stage, sponsors must compare
+technical, operational, and economic trade-offs while many assumptions remain
+uncertain, which calls for robust and reproducible analytical tools. To support
+this process, BCG~X, the technology, design, and engineering unit of Boston
+Consulting Group (BCG), developed the \textbf{Energy Transition Optimizer}, an
+internal product that simulates the operation of a candidate PtX project and
+produces auditable financial indicators. Built in-house and then adapted for
+several clients, it rests on a deterministic optimization engine: a project is
+described as a typed graph of assets, conservation nodes, and markets, together
+with hundreds of parameters, from which the engine derives hour-by-hour
+operating schedules and economic indicators such as net present value, internal
+rate of return, and the levelized cost of the output product.
+
+As the product matured, two obstacles limited its value. First, it sat on a
+\textbf{fragile platform}, with an unreliable delivery pipeline, infrastructure
+drift, security findings in a self-hosted identity layer, a dated interface, and
+weak operational observability. Second, and more fundamentally, it was
+\textbf{expert-only}: obtaining an answer required hand-building a valid
+topology, binding assumptions to every node, configuring parameter sweeps, and
+reading a raw population of results. At the same time, advances in large
+language models opened the possibility of making such tools accessible through
+natural language. Integrating that capability into a product whose value rests
+on the reproducibility and auditability of its computations, however, raises a
+central tension: automation must \emph{assist} the analyst without becoming the
+source of numerical truth.
+
+It is in this context that I carried out my end-of-study internship at BCG~X,
+within the Energy Transition Optimizers product team. Conducted as a team
+effort, the work pursued two complementary goals: consolidating the platform
+foundation, and introducing a \textbf{governed multi-agent conversational
+layer}. In this layer, a director agent routes each request to specialized
+agents (data ingestion, topology design, scenario exploration, and result
+interpretation), while every state-changing action remains a typed proposal that
+is validated and then subject to explicit human approval, so that the
+deterministic engine remains the sole authority over numerical results. Three
+components complete this layer and receive particular attention in this report: the
+\textbf{result-interpretation agent}, a read-only sub-agent that explains the
+economics of a simulation population in natural language while keeping every
+figure traceable to a deterministic result; the associated
+\textbf{visualization layer}; and an \textbf{evaluation harness} that measures
+the factual grounding and financial soundness of the explanations produced.
+
+
+This report is organized into five chapters. Chapter~\ref{chap:context} presents
+the host organization, the energy-transition context, the product, and the
+problem the internship addresses. Chapter~\ref{chap:background} reviews the
+technical background and the state
+of the art, from techno-economic optimization to large-language-model agents and
+their evaluation, and justifies the chosen direction.
+Chapter~\ref{chap:requirements} analyzes and
+specifies the functional and non-functional requirements.
+Chapter~\ref{chap:design} details the
+design and architecture of the modernized platform and its governed multi-agent
+layer, with particular attention to the interpretation, visualization, and
+evaluation components. Chapter~\ref{chap:implementation} describes the
+implementation and reports the
+evaluation results and measured impact. A short unnumbered chapter then records
+the United States patent granted on the optimizer's core method while this work
+was under way, before a general conclusion summarizes the
+outcomes and outlines future perspectives.
+

@@ -1,0 +1,42 @@
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+Ce rapport présente les travaux menés durant mon stage de fin d'études au sein
+de BCG~X, l'entité de conception et d'ingénierie technologique du Boston
+Consulting Group (BCG). Le projet porte sur l'\textit{Energy Transition
+Optimizer}, un produit interne d'analyse de pré-faisabilité de projets
+\textbf{Power-to-X}, développé puis adapté au cas de
+plusieurs clients. Il repose sur un moteur d'optimisation déterministe~: un
+projet y est décrit par une topologie (graphe typé d'actifs, de n\oe uds et de
+marchés) et des centaines de paramètres, à partir desquels le moteur simule
+l'exploitation heure par heure et calcule des indicateurs comme la NPV, l'IRR
+et le coût actualisé du produit (LCOX).
+
+Puissant mais réservé aux experts et reposant sur une plateforme fragile, le
+produit devait être consolidé et rendu accessible. Mené en équipe, le travail a
+modernisé la plateforme et introduit une \textbf{couche conversationnelle
+multi-agents gouvernée}~: un agent directeur oriente chaque requête vers des
+agents spécialisés (ingestion, conception de topologie, exploration de
+scénarios, interprétation des résultats), tandis que toute action modifiant
+l'état reste une proposition typée, validée puis soumise à approbation humaine,
+le moteur déterministe demeurant la seule autorité numérique.
+
+Trois volets complètent cette couche~:
+(i)~l'\textbf{agent d'interprétation des résultats}, un sous-agent en lecture
+seule expliquant en langage naturel l'économie des simulations, chaque chiffre
+restant tracé jusqu'à un résultat déterministe (aucune valeur inventée)~;
+(ii)~la \textbf{couche de visualisation} associée (nuages de points
+interprétables et tableau de flux de trésorerie navigable)~; et (iii)~un
+\textbf{harnais d'évaluation} « LLM-juge » mesurant l'ancrage factuel et la
+solidité financière des explications. Le système allie ainsi la reproductibilité
+d'un outil d'analyse d'investissement à l'accessibilité d'une interface assistée
+par l'IA.
+
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+
+{\textbf{Mots clés :}}
+Power-to-X, pré-faisabilité, optimisation déterministe, systèmes multi-agents,
+grands modèles de langage, interprétation de résultats, évaluation LLM-juge,
+validation humaine.
+\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}

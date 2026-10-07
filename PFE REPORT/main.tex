@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,oneside]{book}
+
+
+\input{Packages}
+
+
+%\makenoidxglossaries 
+
+%\newglossaryentry{latex}
+%{
+%        name=latex,
+%        description={Is a mark up language specially suited for scientific documents}
+%}
+
+
+
+%\selectlanguage{English}
+
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfauthor={Tarik El Oukili},
+    pdftitle={A Governed Multi-Agent Layer for a Power-to-X Pre-Feasibility Optimizer},
+    pdfpagemode=FullScreen,
+    }
+
+% Silence the spurious "Loading a class or package in a group" kernel error
+% triggered by arabtex opening a group around \AtBeginDocument hooks
+% (LaTeX 2025+ strictness with deprecated package).
+\makeatletter
+\let\PFE@saved@latex@error\@latex@error
+\long\def\@latex@error#1#2{%
+  \edef\PFE@tmpa{\detokenize{Loading a class or package in a group}}%
+  \edef\PFE@tmpb{\detokenize{#1}}%
+  \ifx\PFE@tmpa\PFE@tmpb\else\PFE@saved@latex@error{#1}{#2}\fi
+}
+\makeatother
+
+\begin{document}
+
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+    
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        keywordstyle=\color{magenta},
+        numberstyle=\tiny\color{codegreen},
+        stringstyle=\color{codepurple},
+        basicstyle=\ttfamily\footnotesize,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=2
+    }
+
+
+
+
+%\include{Frontmatter/Page_de_garde} %FRENCH ONE
+
+\include{Frontmatter/Page_de_Garde_EN} % ENGLISH
+
+\afterpage{\blankpage}  %page vide obligatoire
+
+\frontmatter
+
+
+\input{Frontmatter/Dedication}
+
+
+
+
+\input{Frontmatter/Résumé}
+
+% \cleardoublepage
+%
+
+\input{Frontmatter/Abstract}
+
+% \cleardoublepage
+%
+
+\input{Frontmatter/Molakhas}
+
+% \cleardoublepage
+%
+
+
+
+
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures} 
+%figures are added automatically here
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables} 
+%tables are added automatically here
+
+%\lstlistoflistings
+%\addcontentsline{toc}{chapter}{List of Listings} 
+%Code snippets are added automatically here
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+%contents are added automatically here
+
+\mainmatter
+
+%debut of chapters
+
+\input{Chapters/GeneralIntroduction}
+
+\input{Chapters/Chapter1}
+
+\input{Chapters/Chapter2}
+
+\input{Chapters/Chapter3}
+
+\input{Chapters/Chapter4}
+
+\input{Chapters/Chapter5}
+
+\input{Chapters/PatentRecognition}
+
+\input{Chapters/Conclusion}
+
+\appendix
+
+
+%\input{Endmatter/Glossary}
+
+%\input{Endmatter/Acronyms}
+
+%\input{Endmatter/ComplementaryCodes}
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+%% --- Optimization and operations research ---
+
+\bibitem{bertsimas1997}
+D.~Bertsimas and J.~N. Tsitsiklis.
+\emph{Introduction to Linear Optimization}.
+Athena Scientific, Belmont, MA, 1997.
+
+\bibitem{nemhauser1988}
+G.~L. Nemhauser and L.~A. Wolsey.
+\emph{Integer and Combinatorial Optimization}.
+Wiley-Interscience, 1988.
+
+\bibitem{morales2013}
+G.~Morales-Espa\~{n}a, J.~M. Latorre, and A.~Ramos.
+Tight and compact MILP formulation for the thermal unit commitment problem.
+\emph{IEEE Transactions on Power Systems}, 28(4):4897--4908, 2013.
+
+\bibitem{wood2013}
+A.~J. Wood, B.~F. Wollenberg, and G.~B. Shebl\'{e}.
+\emph{Power Generation, Operation, and Control}.
+Wiley, 3rd edition, 2013.
+
+%% --- Energy-system and Power-to-X modelling ---
+
+\bibitem{geidl2007opf}
+M.~Geidl and G.~Andersson.
+Optimal power flow of multiple energy carriers.
+\emph{IEEE Transactions on Power Systems}, 22(1):145--155, 2007.
+
+\bibitem{geidl2007hub}
+M.~Geidl, G.~Koeppel, P.~Favre-Perrod, B.~Kl\"{o}ckl, G.~Andersson, and
+K.~Fr\"{o}hlich.
+Energy hubs for the future.
+\emph{IEEE Power and Energy Magazine}, 5(1):24--30, 2007.
+
+\bibitem{ueckerdt2021}
+F.~Ueckerdt, C.~Bauer, A.~Dirnaichner, J.~Everall, R.~Sacchi, and G.~Luderer.
+Potential and risks of hydrogen-based e-fuels in climate change mitigation.
+\emph{Nature Climate Change}, 11:384--393, 2021.
+
+\bibitem{hermesmann2021}
+M.~Hermesmann, K.~Gr\"{u}bel, L.~Scherotzki, and T.~E. M\"{u}ller.
+Promising pathways: the geographic and energetic potential of Power-to-X
+technologies based on regeneratively obtained hydrogen.
+\emph{Renewable and Sustainable Energy Reviews}, 138:110644, 2021.
+
+\bibitem{oemof2018}
+S.~Hilpert, C.~Kaldemeyer, U.~Krien, S.~G\"{u}nther, C.~Wingenbach, and
+G.~Ple\ss{}mann.
+The open energy modelling framework (oemof).
+\emph{Energy Strategy Reviews}, 22:16--25, 2018.
+
+\bibitem{pfenninger2018}
+S.~Pfenninger et al.
+Opening the black box of energy modelling: strategies and lessons learned.
+\emph{Energy Strategy Reviews}, 19:63--71, 2018.
+
+\bibitem{aace2020}
+AACE International.
+\emph{Cost Estimate Classification System as Applied in Engineering,
+Procurement, and Construction for the Process Industries}.
+Recommended Practice 18R-97, rev. 2020.
+
+\bibitem{irena2023}
+International Renewable Energy Agency (IRENA).
+\emph{Renewable Power Generation Costs in 2023}.
+IRENA, 2024.
+
+%% --- Solvers ---
+
+\bibitem{ortools}
+L.~Perron and V.~Furnon.
+\emph{OR-Tools}.
+Google, \href{https://developers.google.com/optimization}{developers.google.com/optimization}.
+
+\bibitem{highs2018}
+Q.~Huangfu and J.~A.~J. Hall.
+Parallelizing the dual revised simplex method.
+\emph{Mathematical Programming Computation}, 10(1):119--142, 2018.
+
+\bibitem{gurobi2024}
+Gurobi Optimization, LLC.
+\emph{Gurobi Optimizer Reference Manual}, 2024.
+
+%% --- Large language models, agents, and tool use ---
+
+\bibitem{vaswani2017}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
+{\L}.~Kaiser, and I.~Polosukhin.
+Attention is all you need.
+In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2017.
+
+\bibitem{wei2022cot}
+J.~Wei, X.~Wang, D.~Schuurmans, M.~Bosma, B.~Ichter, F.~Xia, E.~Chi, Q.~Le, and
+D.~Zhou.
+Chain-of-thought prompting elicits reasoning in large language models.
+In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2022.
+
+\bibitem{yao2023react}
+S.~Yao, J.~Zhao, D.~Yu, N.~Du, I.~Shafran, K.~Narasimhan, and Y.~Cao.
+ReAct: synergizing reasoning and acting in language models.
+In \emph{International Conference on Learning Representations (ICLR)}, 2023.
+
+\bibitem{schick2023toolformer}
+T.~Schick, J.~Dwivedi-Yu, R.~Dess\`{i}, R.~Raileanu, M.~Lomeli, L.~Zettlemoyer,
+N.~Cancedda, and T.~Scialom.
+Toolformer: language models can teach themselves to use tools.
+In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2023.
+
+\bibitem{wu2024autogen}
+Q.~Wu, G.~Bansal, J.~Zhang, Y.~Wu, B.~Li, E.~Zhu, L.~Jiang, X.~Zhang, S.~Zhang,
+J.~Liu, A.~H. Awadallah, R.~W. White, D.~Burger, and C.~Wang.
+AutoGen: enabling next-gen LLM applications via multi-agent conversation.
+In \emph{Conference on Language Modeling (COLM)}, 2024.
+
+\bibitem{wang2024survey}
+L.~Wang et al.
+A survey on large language model based autonomous agents.
+\emph{Frontiers of Computer Science}, 18(6), 2024.
+
+\bibitem{lewis2020rag}
+P.~Lewis, E.~Perez, A.~Piktus, F.~Petroni, V.~Karpukhin, N.~Goyal,
+H.~K\"{u}ttler, M.~Lewis, W.-t. Yih, T.~Rockt\"{a}schel, S.~Riedel, and
+D.~Kiela.
+Retrieval-augmented generation for knowledge-intensive NLP tasks.
+In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2020.
+
+\bibitem{mcp2024}
+Anthropic.
+\emph{Model Context Protocol (MCP) Specification}.
+\href{https://modelcontextprotocol.io}{modelcontextprotocol.io}, 2024.
+
+\bibitem{langgraph2024}
+LangChain.
+\emph{LangGraph: building stateful, multi-actor applications with LLMs}.
+\href{https://langchain-ai.github.io/langgraph/}{langchain-ai.github.io/langgraph}, 2024.
+
+%% --- Trust, evaluation, and observability ---
+
+\bibitem{greshake2023}
+K.~Greshake, S.~Abdelnabi, S.~Mishra, C.~Endres, T.~Holz, and M.~Fritz.
+Not what you've signed up for: compromising real-world LLM-integrated
+applications with indirect prompt injection.
+In \emph{ACM Workshop on Artificial Intelligence and Security (AISec)}, 2023.
+
+\bibitem{zheng2023judge}
+L.~Zheng, W.-L. Chiang, Y.~Sheng, S.~Zhuang, Z.~Wu, Y.~Zhuang, Z.~Lin, Z.~Li,
+D.~Li, E.~P. Xing, H.~Zhang, J.~E. Gonzalez, and I.~Stoica.
+Judging LLM-as-a-judge with MT-Bench and Chatbot Arena.
+In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2023.
+
+\bibitem{sanfeliu1983}
+A.~Sanfeliu and K.-S. Fu.
+A distance measure between attributed relational graphs for pattern recognition.
+\emph{IEEE Transactions on Systems, Man, and Cybernetics}, SMC-13(3):353--362,
+1983.
+
+\bibitem{langfuse2025}
+Langfuse.
+\emph{Langfuse: open-source LLM engineering platform}.
+\href{https://langfuse.com}{langfuse.com}, 2025.
+
+%% --- Patent ---
+
+\bibitem{bcgptx2026}
+M.~Grisard, P.~Meziane, D.~Ankrah, M.~Pocquet, K.~Postek, A.~Dalens,
+M.~Ruplitsch, and H.~Maher.
+\emph{Systems and Techniques for Optimizing the Implementation and Operation of
+Power-to-X Plants}.
+U.S. Patent US~12,711,433~B2, assigned to The Boston Consulting Group, Inc.;
+granted Aug.~18, 2026 (filed Sep.~8, 2023).
+
+\end{thebibliography}
+
+\end{document}

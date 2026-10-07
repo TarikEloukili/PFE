@@ -1,0 +1,42 @@
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+This report presents the work carried out during my end-of-study internship at
+BCG~X, the technology, design, and engineering unit of Boston Consulting Group
+(BCG). The
+project concerns the \textit{Energy Transition Optimizer}, an internal product
+for the pre-feasibility analysis of \textbf{Power-to-X} projects, built in-house and then adapted for several clients. It
+rests on a deterministic optimization engine: a project is described by a
+topology (a typed graph of assets, conservation nodes, and markets) and hundreds
+of parameters, from which the engine simulates operation hour by hour and
+computes indicators such as NPV, IRR, and the levelized cost of the output
+product (LCOX).
+
+Powerful but expert-only, and sitting on a fragile platform, the product had to
+be both consolidated and made accessible. Carried out as a team, the work
+modernized the platform and introduced a \textbf{governed multi-agent
+conversational layer}: a director agent routes each request to specialized
+agents (data ingestion, topology design, scenario exploration, result
+interpretation), while every state-changing action remains a typed proposal that
+is validated and then subject to human approval, the deterministic engine
+remaining the sole authority over numerical results.
+
+Three components complete this layer: (i)~the
+\textbf{result-interpretation agent}, a read-only sub-agent that explains the
+economics of a simulation population in natural language, with every figure
+traceable back to a deterministic result (no invented numbers); (ii)~the
+associated \textbf{visualization layer} (interpret-on-demand scatter plots and a
+navigable discounted-cash-flow table); and (iii)~an \textbf{evaluation harness}
+of the ``LLM-as-a-judge'' kind that measures the factual grounding and financial
+soundness of the explanations produced. The result combines the reproducibility
+of an investment-analysis tool with the accessibility of an AI-assisted
+interface.
+
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+
+{\textbf{Keywords:}}
+Power-to-X, pre-feasibility, deterministic optimization, multi-agent systems,
+large language models, result interpretation, LLM-as-a-judge evaluation,
+human-in-the-loop.
+\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}

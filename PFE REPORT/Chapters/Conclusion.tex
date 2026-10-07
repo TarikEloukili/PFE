@@ -1,0 +1,70 @@
+\chapter*{General Conclusion and Perspectives}
+\addcontentsline{toc}{chapter}{General Conclusion and Perspectives}
+\markboth{General Conclusion and Perspectives}{General Conclusion and Perspectives}
+
+This report addressed a question raised by the modernization of the Energy
+Transition Optimizer, an internal BCG~X product for the pre-feasibility analysis
+of Power-to-X projects: how can generative AI make an expert-only techno-economic
+optimizer accessible in natural language, without compromising the
+reproducibility, auditability, and human control its results demand? The answer
+defended throughout is a separation between assistance and authority: the
+deterministic engine remains the sole source of numerical truth, while a governed
+multi-agent layer helps users design, run, and understand a study, with every
+state-changing action validated and explicitly approved before it takes effect.
+
+The four scoping questions of Chapter~\ref{chap:context} can now be answered
+directly. \emph{What can be delegated:} language models proved well suited to
+preparing inputs and explaining outputs, topology drafting, assumption ingestion,
+scenario framing, and result interpretation, while every numerical result stayed
+with the deterministic engine. \emph{How assisted actions are made trustworthy:}
+each state change is a typed, validated proposal that a human approves, and each
+assisted turn is traced, so actions are auditable and, taking effect only on
+approval, reversible by rejection. \emph{How a non-deterministic capability is
+measured:} an independent LLM-as-a-judge scores interpretations on four explicit
+dimensions, and a graph-edit-distance metric scores generated structures, both
+tracked across versions rather than assumed. \emph{How the work stays adaptable
+across clients:} the layer was built as a reusable product capability on a
+reproducible, infrastructure-as-code platform, so the same core is adapted per
+client rather than rebuilt.
+
+Conducted as a team, the project delivered this on two fronts. It restored the
+platform foundation, with federated enterprise identity, reproducible delivery,
+and operational observability. And it introduced the governed multi-agent layer
+itself, a Director that routes each request to specialist agents for ingestion,
+topology design, scenario exploration, and interpretation, behind typed proposals
+and human approval. The industrial value of the core this layer serves was
+independently confirmed while the work was under way, when the optimizer's
+optimization method was granted a United States patent, presented in the
+preceding chapter.
+
+At the heart of that layer stand three pillars: a
+\textbf{read-only interpretation agent} that explains a simulation population in
+plain language while keeping every figure traceable to a deterministic result; a
+\textbf{visualization layer}, with interactive scatter exploration and a navigable
+discounted-cash-flow table, that makes results legible and carries the
+interpretation on demand; and an \textbf{evaluation harness} that measures the
+grounding and soundness of interpretations, with a graph-edit-distance metric for
+structured outputs. Together they let a non-specialist obtain and audit an
+interpretation that previously required an expert. On the small, first-order sample
+we evaluated, each assisted stage of a study fell by roughly an order of magnitude
+in expert effort, with result interpretation dropping from about two hours to about
+twelve minutes (Chapter~\ref{chap:implementation}); these figures are indicative
+rather than controlled, and a study with non-specialist participants remains future
+work.
+
+The main lesson is that trust in an assisted analytical tool cannot rest on
+prompting alone: it depends on the architecture (the read/write split, the approval
+gates, the grounding rules), on evidence (measuring the assistant rather than
+assuming it), on operations (end-to-end tracing and observability), and ultimately
+on the human who approves each state change. Safety, on this view, is a property of
+that whole arrangement, and one demonstrated on the analyses we ran rather than
+proven in general. Natural extensions follow the same logic: richer comparative
+interpretation, broader and human-calibrated evaluation coverage, adversarial
+testing of the governance boundaries, and adaptation of these capabilities to each
+new client deployment.
+
+On a personal level, the internship strengthened my skills in AI orchestration,
+in language-model evaluation and observability, in data visualization, and in
+techno-economic financial literacy. Above all, it taught me the discipline it
+takes for generative AI to earn trust in a tool whose value depends on being
+right, and that is the standard I intend to carry into what I build next.
